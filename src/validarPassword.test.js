@@ -17,4 +17,12 @@ describe("validarPassword()", () => {
 
     expect(result).toMatchObject({ valido: true, errores: [] });
   });
+
+  test("Return { valido: false, errores: ['Falta un número'] } when password doesn't have any number", () => {
+    const password = "abcdefgh";
+
+    const result = validarPassword(password);
+
+    expect(result).toMatchObject({ valido: false, errores: ['Falta un número'] });
+  });
 });
