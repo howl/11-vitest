@@ -2,12 +2,12 @@ import { describe, expect, test } from "vitest";
 import { validarPassword } from "./validarPassword";
 
 describe("validarPassword()", () => {
-  test("Return { valido: false, errores: ['Mensaje del error'] } when password is less than 8 characters", () => {
+  test("Return { valido: false, errores: [\"Mensaje del error\"] } when password is less than 8 characters", () => {
     const password = "123";
 
     const result = validarPassword(password);
 
-    expect(result).toMatchObject({ valido: false, errores: ['Mensaje del error'] });
+    expect(result).toMatchObject({ valido: false, errores: ["Mensaje del error"] });
   });
 
   test("Return { valido: true, errores: [] } when password is at least 8 characters", () => {
@@ -18,11 +18,11 @@ describe("validarPassword()", () => {
     expect(result).toMatchObject({ valido: true, errores: [] });
   });
 
-  test("Return { valido: false, errores: ['Falta un número'] } when password doesn't have any number", () => {
+  test("Return { valido: false, errores: [\"Falta un número\"] } when password doesn't have any number", () => {
     const password = "abcdefgh";
 
     const result = validarPassword(password);
 
-    expect(result).toMatchObject({ valido: false, errores: ['Falta un número'] });
+    expect(result).toMatchObject({ valido: false, errores: ["Falta un número"] });
   });
 });
