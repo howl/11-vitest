@@ -9,4 +9,12 @@ describe("validarPassword()", () => {
 
     expect(result).toMatchObject({ valido: false, errores: ['Mensaje del error'] });
   });
+
+  test("Return { valido: true, errores: [] } when password is at least 8 characters", () => {
+    const password = "abcdefgh";
+
+    const result = validarPassword(password);
+
+    expect(result).toMatchObject({ valido: true, errores: [] });
+  });
 });
